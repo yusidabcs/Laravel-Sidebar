@@ -1,7 +1,7 @@
 {
   "name": "yusidabcs/laravel-sidebar",
   "description": "A sidebar builder for Laravel",
-  "license": "GPL",
+  "license": "MIT",
   "keywords": [
     "laravel",
     "sidebar",
