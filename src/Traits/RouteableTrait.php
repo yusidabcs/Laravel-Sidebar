@@ -8,6 +8,8 @@ trait RouteableTrait
      * @var string
      */
     protected $url = '#';
+    protected $routeName;
+
 
     /**
      * @return string
@@ -16,6 +18,13 @@ trait RouteableTrait
     {
         return $this->url;
     }
+
+    public function getRouteName()
+    {
+        return $this->routeName;
+    }
+
+
 
     /**
      * @param string $url
@@ -40,6 +49,7 @@ trait RouteableTrait
         $this->url(
             $this->container->make('url')->route($route, $params)
         );
+        $this->routeName = $route;
 
         return $this;
     }
