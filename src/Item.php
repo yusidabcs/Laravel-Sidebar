@@ -137,4 +137,11 @@ interface Item extends Itemable, Authorizable, Routeable
      * @return bool
      */
     public function getNewTab();
+
+    /**
+     * @return array
+     */
+    public function getRouteName();
+
+
 }

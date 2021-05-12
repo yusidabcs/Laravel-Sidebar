@@ -13,6 +13,11 @@ trait ItemableTrait
      */
     protected $items;
 
+     /**
+     * @var Collection|String
+     */
+    protected $child_routes = [];
+
     /**
      * Add a new Item (or edit an existing item) to the Group
      *
@@ -47,7 +52,7 @@ trait ItemableTrait
     public function addItem(Item $item)
     {
         $this->items->put($item->getName(), $item);
-
+        $this->child_routes[] = $item->getRouteName();
         return $this;
     }
 
@@ -68,5 +73,12 @@ trait ItemableTrait
     public function hasItems()
     {
         return count($this->items) > 0 ? true : false;
+    }
+
+    /**
+     * @return array
+     */
+    public function getChildRoutes() {
+        return $this->child_routes;
     }
 }
