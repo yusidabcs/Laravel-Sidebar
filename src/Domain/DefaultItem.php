@@ -30,6 +30,11 @@ class DefaultItem implements Item, Serializable
     protected $weight = 0;
 
     /**
+     * @var string|int|null
+     */
+    protected $additional = null;
+
+    /**
      * @var string
      */
     protected $icon = 'fa fa-angle-double-right';
@@ -82,7 +87,8 @@ class DefaultItem implements Item, Serializable
         'items',
         'badges',
         'appends',
-        'authorized'
+        'authorized',
+        'additional'
     ];
 
     /**
@@ -114,6 +120,27 @@ class DefaultItem implements Item, Serializable
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @param mixed $data
+     *
+     * @return Item $item
+     */
+
+    public function additional($data)
+    {
+        $this->additional = $data;
+
+        return $this;
+    }
+
+    /**
+     * @return string|int|null
+     */
+    public function getAdditional()
+    {
+        return $this->additional;
     }
 
     /**

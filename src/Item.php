@@ -12,6 +12,19 @@ interface Item extends Itemable, Authorizable, Routeable
     public function getName();
 
     /**
+     * @param mixed $data
+     *
+     * @return Item $item
+     */
+    public function additional($data);
+
+    /**
+     *
+     * @return string|int|null
+     */
+    public function getAdditional();
+
+    /**
      * @param mixed $name
      *
      * @return Item $item
@@ -142,6 +155,4 @@ interface Item extends Itemable, Authorizable, Routeable
      * @return array
      */
     public function getRouteName();
-
-
 }
