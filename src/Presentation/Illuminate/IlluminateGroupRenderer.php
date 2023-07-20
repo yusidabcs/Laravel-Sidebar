@@ -40,7 +40,7 @@ class IlluminateGroupRenderer
 
             return $this->factory->make($this->view, [
                 'group' => $group,
-                'items' => $items
+                'items' => $items,
             ])->render();
         }
     }

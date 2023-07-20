@@ -36,6 +36,10 @@ class DefaultGroup implements Group, Serializable
      */
     protected $container;
 
+    protected $module;
+
+    protected $subscription;
+
     /**
      * Data that should be cached
      * @var array
@@ -118,5 +122,29 @@ class DefaultGroup implements Group, Serializable
     public function shouldShowHeading()
     {
         return $this->heading ? true : false;
+    }
+
+    public function setSubscription($subscription)
+    {
+        $this->subscription = $subscription;
+
+        return $this;
+    }
+
+    public function subscription()
+    {
+        return $this->subscription;
+    }
+
+    public function setModule($module)
+    {
+        $this->module = $module;
+
+        return $this;
+    }
+
+    public function module()
+    {
+        return $this->module;
     }
 }

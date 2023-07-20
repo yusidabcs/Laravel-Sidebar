@@ -46,4 +46,12 @@ interface Group extends Itemable, Authorizable
      * @return Collection|Item[]
      */
     public function getItems();
+
+    public function setModule($module);
+
+    public function module();
+
+    public function setSubscription($subscription);
+
+    public function subscription();
 }
