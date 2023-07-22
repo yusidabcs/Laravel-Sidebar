@@ -54,4 +54,8 @@ interface Group extends Itemable, Authorizable
     public function setSubscription($subscription);
 
     public function subscription();
+
+    public function setDropdown($dropdown);
+
+    public function dropdown();
 }

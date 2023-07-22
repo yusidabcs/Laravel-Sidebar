@@ -39,6 +39,7 @@ class DefaultGroup implements Group, Serializable
     protected $module;
 
     protected $subscription;
+    protected $dropdown = true;
 
     /**
      * Data that should be cached
@@ -146,5 +147,17 @@ class DefaultGroup implements Group, Serializable
     public function module()
     {
         return $this->module;
+    }
+
+
+    public function setDropdown($dropdown)
+    {
+        $this->dropdown = $dropdown;
+        return $this;
+    }
+
+    public function dropdown()
+    {
+        return $this->dropdown;
     }
 }
