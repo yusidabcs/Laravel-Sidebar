@@ -155,4 +155,8 @@ interface Item extends Itemable, Authorizable, Routeable
      * @return array
      */
     public function getRouteName();
+
+    public function setPinnedGroup($pinned);
+
+    public function pinnedGroup();
 }

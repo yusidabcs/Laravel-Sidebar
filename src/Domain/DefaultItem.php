@@ -91,6 +91,8 @@ class DefaultItem implements Item, Serializable
         'additional'
     ];
 
+    protected $pinned;
+
     /**
      * @param Container $container
      */
@@ -365,5 +367,15 @@ class DefaultItem implements Item, Serializable
     public function getItemClass()
     {
         return $this->itemClass;
+    }
+
+    public function setPinnedGroup($pinned)
+    {
+        $this->pinned = $pinned;
+    }
+
+    public function pinnedGroup()
+    {
+        return$this->pinned;
     }
 }
