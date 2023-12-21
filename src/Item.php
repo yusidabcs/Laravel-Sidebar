@@ -159,4 +159,8 @@ interface Item extends Itemable, Authorizable, Routeable
     public function setPinnedGroup($pinned);
 
     public function pinnedGroup();
+
+    public function setCollapse($collapse);
+
+    public function collapse();
 }

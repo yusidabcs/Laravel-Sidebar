@@ -41,6 +41,11 @@ class DefaultGroup implements Group, Serializable
     protected $subscription;
     protected $dropdown = true;
 
+    protected $route='';
+
+    protected $icon='';
+
+
     /**
      * Data that should be cached
      * @var array
@@ -159,5 +164,22 @@ class DefaultGroup implements Group, Serializable
     public function dropdown()
     {
         return $this->dropdown;
+    }
+
+    public function setRoute($route) {
+        $this->route = $route;
+    }
+
+    public function setIcon($icon) {
+        $this->icon = $icon;
+
+    }
+
+    public function getRoute() {
+        return $this->route;
+    }
+
+    public function getIcon() {
+        return $this->icon;
     }
 }

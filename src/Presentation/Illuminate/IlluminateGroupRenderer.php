@@ -20,9 +20,12 @@ class IlluminateGroupRenderer
     /**
      * @param Factory $factory
      */
-    public function __construct(Factory $factory)
+    public function __construct(Factory $factory, $isDrawer = false)
     {
         $this->factory = $factory;
+        if($isDrawer) {
+            $this->view = 'sidebar::drawer-group';
+        }
     }
 
     /**

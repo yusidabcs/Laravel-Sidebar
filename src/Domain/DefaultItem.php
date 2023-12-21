@@ -74,6 +74,7 @@ class DefaultItem implements Item, Serializable
      */
     protected $container;
 
+    protected $isCollapse = false;
     /**
      * Data that should be cached
      * @var array
@@ -377,5 +378,13 @@ class DefaultItem implements Item, Serializable
     public function pinnedGroup()
     {
         return$this->pinned;
+    }  
+
+    public function setCollapse($collapse) {
+        $this->isCollapse = $collapse;
+    }
+
+    public function collapse() {
+        return $this->isCollapse;
     }
 }

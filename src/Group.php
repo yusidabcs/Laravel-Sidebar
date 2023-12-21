@@ -58,4 +58,12 @@ interface Group extends Itemable, Authorizable
     public function setDropdown($dropdown);
 
     public function dropdown();
+
+    public function setRoute($route);
+
+    public function setIcon($icon);
+
+    public function getRoute();
+
+    public function getIcon();
 }
