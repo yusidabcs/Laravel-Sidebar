@@ -81,4 +81,15 @@ trait ItemableTrait
     public function getChildRoutes() {
         return $this->child_routes;
     }
+
+    public function isActive()
+    {
+        $current_route = request()->route()->getName();
+
+        if($this->hasItems()) {
+            return in_array($current_route, $this->getChildRoutes());
+        }
+
+        return $current_route == $this->getRouteName();
+    }
 }

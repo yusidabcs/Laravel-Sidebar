@@ -163,4 +163,9 @@ interface Item extends Itemable, Authorizable, Routeable
     public function setCollapse($collapse);
 
     public function collapse();
+
+    public function getActiveIcon();
+    public function setActiveIcon($icon);
+
+    public function buildIcon();
 }

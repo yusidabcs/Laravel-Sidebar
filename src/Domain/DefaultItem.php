@@ -42,6 +42,11 @@ class DefaultItem implements Item, Serializable
     /**
      * @var string
      */
+    protected $activeIcon = null;
+
+    /**
+     * @var string
+     */
     protected $toggleIcon = 'fa fa-angle-left';
 
     /**
@@ -386,5 +391,26 @@ class DefaultItem implements Item, Serializable
 
     public function collapse() {
         return $this->isCollapse;
+    }
+
+    public function getActiveIcon()
+    {
+        return $this->activeIcon;
+    }
+
+    public function setActiveIcon($icon)
+    {
+        $this->activeIcon = $icon;
+    }
+
+    public function buildIcon()
+    {
+        if ($this->isActive()) {
+            if (!is_null($this->getActiveIcon())) {
+                return $this->getActiveIcon();
+            }
+        }
+
+        return $this->icon;
     }
 }
